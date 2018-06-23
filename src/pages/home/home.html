@@ -7,8 +7,39 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <div *ngIf="fname" >{{fname}}</div>
+  <div *ngIf="dados" >
+    {{dados.fname}}
+  </div>
+
+  <form [formGroup]="form">
+      <ion-item>
+        <ion-label stacked>Ele</ion-label>
+        <ion-input type="text" formControlName="fname" [(ngModel)]="fname"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.fname.valid && (form.controls.fname.dirty || form.controls.fname.touched)" color="danger">
+        <div [hidden]="!form.controls.fname.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label stacked>Ela</ion-label>
+        <ion-input type="text" formControlName="sname"  [(ngModel)]="sname"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!form.controls.sname.valid && (form.controls.sname.dirty || form.controls.sname.touched)" color="danger">
+        <div [hidden]="!form.controls.sname.errors.required">
+          O campo é obrigatório
+        </div>
+      </ion-item>
+  
+      
+  
+      <div padding>
+        <button ion-button block type="submit" [disabled]="!form.valid" (click)="onSubmit()">Salvar</button>
+      </div>
+    </form>
+
+  
 </ion-content>
