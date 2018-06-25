@@ -3,7 +3,13 @@ import { Observable } from '@firebase/util';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 
-
+interface Dados {
+  key: string,
+  fname: string,
+  sname:string,
+  percentage:string,
+  result: string
+}
 @Injectable()
 export class CrushProvider {
 
@@ -36,6 +42,8 @@ export class CrushProvider {
   }
 
   save(dados: any) {
+    console.log("segundo");
+    
     return new Promise((resolve, reject) => {
       if (dados.key) {
         this.db.list(this.PATH)
@@ -44,11 +52,9 @@ export class CrushProvider {
           .catch((e) => reject(e));
 
       } else {
-
         this.db.list(this.PATH)
-          .push({ fname: dados.fname, sname: dados.sname, result: dados.result, pepercentage: dados.percentage})
+          .push( { fname: dados.fname, sname: dados.sname, result: dados.result, pepercentage: dados.percentage  })
           .then(() => resolve());
-
       }
     })
 

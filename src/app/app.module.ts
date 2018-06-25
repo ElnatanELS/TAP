@@ -1,3 +1,5 @@
+import { auth } from './../providers/auth/auth';
+import { CadastroPage } from './../pages/cadastro/cadastro';
 import { CrushPage } from './../pages/crush/crush';
 import { TabsPage } from './../pages/tabs/tabs';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,13 +16,17 @@ import { HomePage } from '../pages/home/home';
 import { CalcLoveProvider } from '../providers/calc-love/calc-love';
 import { HttpClientModule } from '@angular/common/http';
 import { CrushProvider } from '../providers/crush/crush';
+import { LoginPage } from '../pages/login/login';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     TabsPage,
-    CrushPage
+    CrushPage,
+    LoginPage,
+    CadastroPage
   ],
   imports: [
     BrowserModule,
@@ -36,21 +42,25 @@ import { CrushProvider } from '../providers/crush/crush';
         messagingSenderId: "870621776233"
       }
     ),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    AngularFireAuthModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     TabsPage,
-    CrushPage
+    CrushPage,
+    LoginPage,
+    CadastroPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     CalcLoveProvider,
-    CrushProvider
+    CrushProvider,
+    auth
   ]
 })
 export class AppModule { }

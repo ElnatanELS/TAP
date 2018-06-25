@@ -19,8 +19,7 @@ export class CalcLoveProvider {
 
   constructor(public http: HttpClient) {
     console.log('Hello CalcLoveProvider Provider');
-   console.log(this.fname);
-   
+
     
   }
 
