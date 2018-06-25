@@ -166,3 +166,102 @@ body{
       top:0;
     }
 }
+
+@import url(https://fonts.googleapis.com/css?family=Cutive+Mono);
+
+body {background: url(http://www.marinadevelops.com/img/worn_dots.png);} /*subtle patterns */
+
+h2 { 
+    font-size: 40px; 
+    text-align: center; 
+    margin-top: 20px;
+    font-family: 'Cutive Mono',serif;
+    
+  
+}
+#wrapper {
+    margin: 90px 0 0 100px;
+    position:relative;
+}
+.heart {
+    height:171px;
+    width:196px;
+    position:relative;
+    top:0;
+    left:0;
+    text-transform:uppercase;
+    z-index:2;
+}
+.heart:before, .heart:after {
+    position: absolute;
+    content: "";
+    left: 98px;
+    top: 0;
+    width: 100px;
+    height: 161px;
+    -moz-border-radius: 50px 50px 0 0;
+         border-radius: 50px 50px 0 0;
+     -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+             transform: rotate(-45deg);
+     -webkit-transform-origin:0 100%;
+        -moz-transform-origin:0 100%;
+             transform-origin:0 100%;
+    z-index:4;
+}
+.heart:after {
+    left: 0;
+     -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+         -ms-transform: rotate(45deg);
+             transform: rotate(45deg);
+     -webkit-transform-origin:100% 100%;
+        -moz-transform-origin:100% 100%;
+             transform-origin:100% 100%;
+}
+#purple { left:80px }
+#green { left:160px }
+#pink:after, #pink:before { background:#f4bdf1; }
+#purple:after, #purple:before { background:#afc3ee; }
+#green:after, #green:before { background:#d4f0be; }
+.heart div {
+    position: absolute; 
+    width: 100%; 
+    top: 30%; 
+    text-align: center;
+    color: #f01111;
+    font-family: 'Cutive Mono', serif;
+    font-size: 30px;
+    font-weight: bold;
+    z-index:8;
+}
+.heart:hover {cursor: pointer}
+#green:hover {
+   -webkit-animation: greenHeart 3s linear;
+      -moz-animation: greenHeart 3s linear;  
+           animation: greenHeart 3s linear; 
+}
+           @keyframes greenHeart { to { margin-left: 90px;}}
+      @-moz-keyframes greenHeart { to { margin-left: 90px;}}
+   @-webkit-keyframes greenHeart { to { margin-left: 90px;}}
+       @-ms-keyframes greenHeart { to { margin-left: 90px;}}
+
+#purple:hover {
+  -webkit-animation: purpleHeart 3s linear;
+     -moz-animation: purpleHeart 3s linear;
+          animation: purpleHeart 3s linear;   
+}
+          @keyframes purpleHeart { to { margin-top: 90px;}}
+     @-moz-keyframes purpleHeart { to { margin-top: 90px;}}
+  @-webkit-keyframes purpleHeart { to { margin-top: 90px;}}
+      @-ms-keyframes purpleHeart { to { margin-top: 90px;}}
+
+#pink:hover {
+    -webkit-animation: pinkHeart 3s linear;
+       -moz-animation: pinkHeart 3s linear;
+            animation: pinkHeart 3s linear;
+}
+            @keyframes pinkHeart { to { margin-left: -90px;}}
+       @-moz-keyframes pinkHeart { to { margin-left: -90px;}}
+    @-webkit-keyframes pinkHeart { to { margin-left: -90px;}}
+        @-ms-keyframes pinkHeart { to { margin-left: -90px;}}

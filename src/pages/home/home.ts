@@ -14,6 +14,8 @@ export class HomePage {
   fname = "";
   sname = "";
   form: FormGroup;
+
+  visao = true;
   
 
   constructor( public navCtrl: NavController, public navParams: NavParams,
@@ -48,7 +50,9 @@ export class HomePage {
       this.dados = data;
       console.log(this.dados);
       this.onSubmit();
+      this.visao = false;
     });
+    
   }
 
 
@@ -76,5 +80,7 @@ export class HomePage {
     }
    
   }
+
+
 
 }
